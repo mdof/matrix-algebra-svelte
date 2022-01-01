@@ -2,6 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import { createEventDispatcher } from 'svelte';
 	import Input from './Input.svelte';
+	import '../app.css';
 
 	export let matrix_vec: number[] = [];
 	export let flow_order: 'column' | 'row' = 'column';
@@ -30,7 +31,7 @@
 </script>
 
 <div
-	class="grid matrix gap-1 justify-items-center items-center "
+	class="base-matrix matrix-config"
 	style="--dimension: {effectHolded ? old_dim_matrix : dim_matrix};--flow_order:{flow_order}"
 >
 	{#each matrix_vec as value, pos}
@@ -39,7 +40,7 @@
 			on:introend={() => (old_dim_matrix = dim_matrix)}
 			on:outrostart={() => (effectHolded = true)}
 			on:outroend={() => (effectHolded = false)}
-			class="w-full flex content-center justify-center | rounded border-2 border-gray-100 "
+			class="input-container"
 		>
 			<Input {value} on:input={(e) => handleInput(pos, e.detail)} />
 		</div>
@@ -47,9 +48,16 @@
 </div>
 
 <style>
-	.matrix {
+	.base-matrix {
+		@apply grid gap-1 justify-items-center items-center;
+	}
+	.matrix-config {
 		grid-auto-flow: var(--flow_order);
 		grid-template-columns: repeat(var(--dimension), 1fr);
 		grid-template-rows: repeat(var(--dimension), 1fr);
+	}
+
+	.input-container {
+		@apply w-full flex content-center justify-center  rounded border-2 border-gray-100;
 	}
 </style>

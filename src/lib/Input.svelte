@@ -31,20 +31,21 @@
 	}
 </script>
 
-<label
-	class="w-full select-none flex items-center border border-transparent rounded-sm | hover:border-gray-100 | focus-within:outline-none focus-within:ring-2 focus-within:ring-primary-focus focus-within:ring-opacity-70"
->
+<label>
 	{#if label != ''}
-		<span
-			class="block flex-shrink-0 h-7 w-auto px-4 | text-base-content | text-xs leading-7 text-center "
-			>{label}
-		</span>
+		<span>{label} </span>
 	{/if}
-	<input
-		class="w-full h-7 bg-transparent outline-none | text-xs leading-7 text-center"
-		bind:value
-		on:input={onChange}
-		on:blur={onLeave}
-		tabindex="0"
-	/>
+	<input bind:value on:input={onChange} on:blur={onLeave} tabindex="0" />
 </label>
+
+<style>
+	label {
+		@apply w-full select-none flex items-center border border-transparent rounded-sm  hover:border-gray-100  focus-within:outline-none focus-within:ring-2 focus-within:bg-indigo-700 focus-within:ring-opacity-70;
+	}
+	span {
+		@apply block flex-shrink-0 h-7 w-auto px-4  text-neutral-700  text-xs leading-7 text-center;
+	}
+	input {
+		@apply w-full h-7 bg-transparent outline-none  text-xs leading-7 text-center;
+	}
+</style>
