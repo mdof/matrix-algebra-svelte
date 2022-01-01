@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import InputNumber from '$lib/InputNumber.svelte';
 	import { createEventDispatcher } from 'svelte';
 	import Input from './Input.svelte';
 
@@ -27,7 +26,7 @@
 
 	const dispatch = createEventDispatcher();
 	function handleInput(position: number, newValue: number) {
-		// matrix_vec[pos] = newValue;
+		console.log('Received new value : ', newValue);
 		dispatch('input', { newValue, position });
 	}
 </script>
@@ -44,14 +43,7 @@
 			on:outroend={() => (effectHolded = false)}
 			class="w-full flex content-center justify-center | rounded border-2 border-gray-100 "
 		>
-			<!-- <InputNumber {value} on:input={(e) => handleInput(pos, e.detail)} /> -->
 			<Input {value} on:input={(e) => handleInput(pos, e.detail)} />
-
-			<!-- <input -->
-			<!--   type="number" -->
-			<!--   bind:value -->
-			<!--   on:input={(e) => handleInput(pos, parseFloat(e.target.value))} -->
-			<!-- /> -->
 		</div>
 	{/each}
 </div>
