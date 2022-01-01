@@ -1,39 +1,46 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	export let value: number = 0;
+	import { parseNumber, formatStringNumber } from '../scripts/parseStringToNumber';
+	export let label: string = '';
+	const defaultValue = 0;
+	export let value: number | string = defaultValue;
 	const dispatch = createEventDispatcher();
 
-	function handleChange(e: Event) {
+	function reset() {
+		value = defaultValue;
+		dispatch('input', defaultValue);
+	}
+
+	function onChange(e: Event) {
 		let strInput: string = (e.target as HTMLInputElement).value;
-		// let numInput = parseFloat(strInput);
 		let numInput = parseNumber(strInput);
-		if (isNaN(numInput)) {
-			console.log('Could not convert to float : ', strInput);
-			return;
-		}
 		dispatch('input', numInput);
 	}
 
-	$: if (value) {
-		console.log('Value changed to ', value);
-	}
-
-	function parseNumber(value: string) {
-		const cleanPattern = new RegExp(`[^-+0-9eE,\.]`, 'g');
-		const cleaned = value.replace(cleanPattern, '');
-
-		const separators = [...cleaned.matchAll(/[\.,]/g)];
-		let filteredSeparators = [...cleaned];
-		//Only use last separator and delete rest
-		//Don't filter last separator ( sep.length - 2 )
-		for (let i = separators.length - 2; i >= 0; i--) {
-			let idx = separators[i].index;
-			filteredSeparators.splice(idx, 1);
+	function onLeave(e: Event) {
+		let strInput: string = (e.target as HTMLInputElement).value;
+		if (strInput == '') {
+			reset();
+			return;
 		}
-		const normalized = filteredSeparators.join('').replace(',', '.');
-
-		return parseFloat(normalized);
+		value = formatStringNumber(strInput);
 	}
 </script>
 
-<input bind:value on:input={handleChange} />
+<label
+	class="w-full select-none flex items-center border border-transparent rounded-sm | hover:border-gray-100 | focus-within:outline-none focus-within:ring-2 focus-within:ring-primary-focus focus-within:ring-opacity-70"
+>
+	{#if label != ''}
+		<span
+			class="block flex-shrink-0 h-7 w-auto px-4 | text-base-content | text-xs leading-7 text-center "
+			>{label}
+		</span>
+	{/if}
+	<input
+		class="w-full h-7 bg-transparent outline-none | text-xs leading-7 text-center"
+		bind:value
+		on:input={onChange}
+		on:blur={onLeave}
+		tabindex="0"
+	/>
+</label>
