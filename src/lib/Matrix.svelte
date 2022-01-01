@@ -2,7 +2,6 @@
 	import { fade } from 'svelte/transition';
 	import { createEventDispatcher } from 'svelte';
 	import Input from './Input.svelte';
-	import '../app.css';
 
 	export let matrix_vec: number[] = [];
 	export let flow_order: 'column' | 'row' = 'column';
