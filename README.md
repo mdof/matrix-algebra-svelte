@@ -31,11 +31,11 @@ We will use markdown for the Syntax Highlighting
 <h3> Download & Installation </h3>
 
 ```shell
-$ npm i matrix-algebra
+$ npm i matrix-algebra-svelte
 ```
 
 <h3>Contributing</h3>
-Keep it simple. Keep it minimal. Don't put every single feature just because you can.
+Keep it simple. Keep it minimal.
 
 <h3>Authors or Acknowledgments</h3>
 <ul>

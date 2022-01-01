@@ -11,7 +11,7 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
 		"test-scripts": "jest",
 		"prepublish": "npm run package",
-		"publish": "cd package && npm publish && cd ..",
+		"publish": "npm publish ./package",
 		"prerelease": "npm run format && npm run test-scripts",
 		"release": "standard-version",
 		"postrelease": "git push --follow-tags origin main && npm run publish"
