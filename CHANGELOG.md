@@ -2,12 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.11](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.10...v0.0.11) (2022-01-01)
+### [0.0.12](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.11...v0.0.12) (2022-01-01)
 
+### [0.0.11](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.10...v0.0.11) (2022-01-01)
 
 ### Bug Fixes
 
-* styling Input.svelte ([0d0bd73](https://github.com/esoteloferry/matrix-algebra-svelte/commit/0d0bd73f9fbeea8d5f782bb4115b94e68db8ce5f))
+- styling Input.svelte ([0d0bd73](https://github.com/esoteloferry/matrix-algebra-svelte/commit/0d0bd73f9fbeea8d5f782bb4115b94e68db8ce5f))
 
 ### [0.0.10](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.9...v0.0.10) (2022-01-01)
 
