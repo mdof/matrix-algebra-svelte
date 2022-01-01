@@ -19,7 +19,7 @@
 
 <h3> Demo -> Show me what you got </h3>
 
-<a href="#"> Link to your awesome Demo </a>
+<a href="https://svelte.dev/repl/41c938b499804b22962328cfa13defd7?version=3.24.0"> Check a demo (REPL)</a>
 
 <h3> Code Demo </h3>
 
