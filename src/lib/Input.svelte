@@ -14,12 +14,16 @@
 	function onChange(e: Event) {
 		let strInput: string = (e.target as HTMLInputElement).value;
 		let numInput = parseNumber(strInput);
+		if (Number.isNaN(numInput)) {
+			return;
+		}
 		dispatch('input', numInput);
 	}
 
 	function onLeave(e: Event) {
 		let strInput: string = (e.target as HTMLInputElement).value;
-		if (strInput == '') {
+		let numInput = parseNumber(strInput);
+		if (Number.isNaN(numInput)) {
 			reset();
 			return;
 		}
