@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { parseNumber, formatStringNumber } from '../scripts/parseStringToNumber';
+	import { parseNumber, formatStringNumber } from './scripts/parseStringToNumber';
 	export let label: string = '';
 	const defaultValue = 0;
 	export let value: number | string = defaultValue;
