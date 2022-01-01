@@ -3,7 +3,6 @@
 	import { createEventDispatcher } from 'svelte';
 	import Input from './Input.svelte';
 
-	export let name: string = '';
 	export let matrix_vec: number[] = [];
 	export let flow_order: 'column' | 'row' = 'column';
 
@@ -18,7 +17,6 @@
 	let dim_matrix = getDimMatrix();
 	$: if (matrix_vec) {
 		dim_matrix = getDimMatrix();
-		console.log(`From matrix ${name}: ${matrix_vec}`);
 	}
 
 	let old_dim_matrix: number;
