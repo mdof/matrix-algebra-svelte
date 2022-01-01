@@ -10,10 +10,11 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
 		"test-scripts": "jest",
+		"prepublish": "npm run package",
+		"publish": "cd package && npm run publish && cd ..",
 		"prerelease": "npm run format && npm run test-scripts",
 		"release": "standard-version",
-		"prepublish": "npm run prerelease && npm run package",
-		"publish": "cd package && npm run publish && cd .."
+		"postrelease": "git push --follow-tags origin main && npm run publish"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
