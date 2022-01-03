@@ -4,17 +4,16 @@
 	export let label: string = '';
 	const defaultValue = 0;
 	export let value: number | string = defaultValue;
-	export let displayValue: string = value.toString();
+	let oldValue: string = value.toString();
 	const dispatch = createEventDispatcher();
 
 	function reset() {
 		value = defaultValue;
-		displayValue = value.toString();
+		oldValue = value.toString();
 		dispatch('input', defaultValue);
 	}
 
 	let editing: boolean = false;
-	let oldValue: string = '';
 	function onChange(e: Event) {
 		editing = true;
 		// Validate before dispatching
@@ -43,13 +42,14 @@
 			// console.log('Not editing');
 			let numInput = parseNumber(oldValue);
 			if (Number.isNaN(numInput)) {
-				// console.log('Nan value is ', displayValue);
+				console.log(`Nan value ${numInput} coming from ${oldValue}`);
 				reset();
 			} else {
 				value = formatStringNumber(oldValue);
 			}
 			// console.log('Value modified ', value, ' from ', oldValue);
 		}
+		console.log('Updated value to ', value);
 	}
 
 	//FIXME: style when focus not working in test folder and REPL
