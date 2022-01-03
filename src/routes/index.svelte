@@ -16,7 +16,7 @@
 
 <h1 class="font-bold">Welcome to matrix-algebra-svelte</h1>
 
-<div class="block">
+<div class="block" data-test-id="reactive">
 	<h2 class="font-bold">Reactivity</h2>
 	<h2>Vector = {vec}</h2>
 	<MatrixSymm bind:matrix_vec={vec} />

@@ -1,4 +1,6 @@
 import { parseNumber, formatStringNumber } from './parseStringToNumber';
+import { testData } from './testFormatNumber.cjs';
+
 describe('parseNumber', () => {
 	let val = 1000.2;
 	test('standard format input', () => {
@@ -21,24 +23,10 @@ describe('parseNumber', () => {
 });
 
 describe('formatStringNumber', () => {
-	test('standard format input', () => {
-		//Integer
-		expect(formatStringNumber('2.0')).toBe('2');
-		expect(formatStringNumber('2')).toBe('2');
-		//Float
-		expect(formatStringNumber('2.1')).toBe('2.10');
-		expect(formatStringNumber('2.166')).toBe('2.17');
-		expect(formatStringNumber('120.1')).toBe('120.10');
-	});
-	test('scientific format input', () => {
-		//Integer
-		expect(formatStringNumber('2e0')).toBe('2');
-		//Float
-		expect(formatStringNumber('2e-2')).toBe('2.00e-2');
-		expect(formatStringNumber('1.234e-2')).toBe('1.23e-2');
-		expect(formatStringNumber('1.234e0')).toBe('1.23');
-		expect(formatStringNumber('12.1e-1')).toBe('1.21');
-		expect(formatStringNumber('20.5e-2')).toBe('2.05e-1');
+	test('format input', () => {
+		for (let testFormat of testData['formatString']) {
+			expect(formatStringNumber(testFormat['input'])).toBe(testFormat['output']);
+		}
 	});
 });
 

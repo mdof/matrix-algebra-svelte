@@ -6,3 +6,11 @@ node_modules
 .env
 .env.*
 !.env.example
+
+/* cypress */
+cypress/integration/2*
+cypress/integration/1*
+cypress/fixtures/example.json
+cypress/support/commands.js
+cypress/support/index.js
+
