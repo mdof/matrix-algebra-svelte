@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { createEventDispatcher } from 'svelte';
 	import Input from './Input.svelte';
 
 	export let matrix_vec: number[] = [];
@@ -22,11 +21,11 @@
 	let old_dim_matrix: number;
 	let effectHolded = false;
 
-	const dispatch = createEventDispatcher();
 	function handleInput(position: number, newValue: number) {
-		console.log('Received new value : ', newValue);
-		dispatch('input', { newValue, position });
+		matrix_vec[position] = newValue;
 	}
+
+	$: console.log(`Matrix changed to ${matrix_vec}`);
 </script>
 
 <div
@@ -46,7 +45,7 @@
 	{/each}
 </div>
 
-<style>
+<style lang="postcss">
 	.base-matrix {
 		@apply grid gap-1 justify-items-center items-center;
 	}
