@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#6563ff" d="M21,2H3A1,1,0,0,0,2,3V21a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V3A1,1,0,0,0,21,2ZM8,20H4V16H8Zm0-6H4V10H8ZM8,8H4V4H8Zm6,12H10V16h4Zm0-6H10V10h4Zm0-6H10V4h4Zm6,12H16V16h4Zm0-6H16V10h4Zm0-6H16V4h4Z"/></svg>
 </p>
 
-<h1 align="center"> Matrix Algebra </h1>
+<h1 align="center"> matrix-algebra-svelte </h1>
 
 <p align="center"> A Svelte component for adding matrices to your projects </p>
 
@@ -17,7 +17,7 @@
   <li>Vectors (future)</li>
 </ul>
 
-<h3> Demo -> Show me what you got </h3>
+<h3> Demo </h3>
 
 <a href="https://svelte.dev/repl/41c938b499804b22962328cfa13defd7?version=3.24.0"> Check a demo (REPL)</a>
 
