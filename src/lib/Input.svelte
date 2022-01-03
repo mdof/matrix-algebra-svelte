@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import { parseNumber, formatStringNumber } from './scripts/parseStringToNumber';
-	export let label: string = '';
 	const defaultValue = 0;
-	export let value: number | string = defaultValue;
-	let oldValue: string = value.toString();
 	const dispatch = createEventDispatcher();
+
+	export let label: string = '';
+	export let value: number | string = defaultValue;
+	export let disabled: boolean = false;
+
+	let oldValue: string = value.toString();
 
 	function reset() {
 		value = defaultValue;
@@ -68,7 +71,7 @@
 	{#if label != ''}
 		<span>{label} </span>
 	{/if}
-	<input bind:value on:input={onChange} on:blur={onLeave} tabindex="0" />
+	<input bind:value on:input={onChange} on:blur={onLeave} tabindex="0" {disabled} class:disabled />
 </label>
 
 <style lang="postcss">
@@ -80,5 +83,9 @@
 	}
 	input {
 		@apply w-full m-0 h-7 bg-transparent outline-none  text-xs leading-7 text-center;
+	}
+
+	.disabled {
+		@apply text-gray-300;
 	}
 </style>

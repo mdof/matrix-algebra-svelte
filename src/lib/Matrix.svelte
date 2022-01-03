@@ -6,6 +6,7 @@
 	export let rows: number = 0;
 	export let cols: number = 0;
 	export let flow_order: 'column' | 'row' = 'column';
+	export let disabled: number[] = [];
 
 	let old_rows: number;
 	let old_cols: number;
@@ -35,7 +36,11 @@
 			on:outroend={() => (effectHolded = false)}
 			class="input-container"
 		>
-			<Input {value} on:input={(e) => handleInput(pos, e.detail)} />
+			<Input
+				{value}
+				on:input={(e) => handleInput(pos, e.detail)}
+				disabled={disabled.includes(pos)}
+			/>
 		</div>
 	{/each}
 </div>

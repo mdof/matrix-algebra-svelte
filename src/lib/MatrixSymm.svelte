@@ -1,21 +1,16 @@
 <script lang="ts">
-	import Matrix from './Matrix.svelte';
+	import MatrixSquare from './MatrixSquare.svelte';
+	import { getDisabled, getDimMatrix } from './scripts/matrix';
 
 	export let matrix_vec: number[] = [];
 	export let flow_order: 'column' | 'row' = 'column';
 
-	function getDimMatrix(): number {
-		let sqrtDimVec = Math.sqrt(matrix_vec.length);
-		if (Number.isInteger(sqrtDimVec)) {
-			return sqrtDimVec;
-		}
-		return Math.round(sqrtDimVec);
-	}
-
-	let dim_matrix = getDimMatrix();
+	let dim_matrix = getDimMatrix(matrix_vec);
+	let disabled: number[];
 	$: if (matrix_vec) {
-		dim_matrix = getDimMatrix();
+		dim_matrix = getDimMatrix(matrix_vec);
+		disabled = getDisabled(dim_matrix);
 	}
 </script>
 
-<Matrix rows={dim_matrix} cols={dim_matrix} bind:matrix_vec {flow_order} />
+<MatrixSquare bind:matrix_vec {flow_order} {disabled} />
