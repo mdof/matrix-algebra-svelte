@@ -1,6 +1,7 @@
 <script lang="ts">
 	//
 	import Matrix from '$lib/Matrix.svelte';
+	import MatrixSquare from '$lib/MatrixSquare.svelte';
 	import MatrixSymm from '$lib/MatrixSymm.svelte';
 	let vec = [10, 20, 30, 40];
 	let not_squared = [1, 2, 3, 4, 5, 6];
@@ -19,15 +20,17 @@
 <div class="block" data-test-id="reactive">
 	<h2 class="font-bold">Reactivity</h2>
 	<h2>Vector = {vec}</h2>
-	<MatrixSymm bind:matrix_vec={vec} />
+	<MatrixSquare bind:matrix_vec={vec} />
 </div>
 <div class="block">
 	<h2 class="font-bold">Square matrix , flow column (default)</h2>
-	<MatrixSymm matrix_vec={[1, 2, 3, 4]} />
+	<MatrixSquare matrix_vec={[1, 2, 3, 4]} />
 	<h2 class="font-bold">Square matrix , flow row</h2>
-	<MatrixSymm matrix_vec={[1, 2, 3, 4]} flow_order="row" />
+	<MatrixSquare matrix_vec={[1, 2, 3, 4]} flow_order="row" />
 	<h2 class="font-bold">Not squared</h2>
 	<Matrix matrix_vec={[1, 2, 3, 4, 5, 6]} rows={2} cols={3} />
+	<h2 class="font-bold">Symmetrix</h2>
+	<MatrixSymm matrix_vec={[1, 2, 3, 4]} />
 </div>
 
 <div class="block">
@@ -38,7 +41,7 @@
 		<button class="w-6 bg-red-100" on:click={() => (dim -= 1)}>-</button>
 		<button class="w-6 bg-red-100" on:click={() => (dim += 1)}>+</button>
 	</div>
-	<MatrixSymm bind:matrix_vec={vec_modified_by_dim} />
+	<MatrixSquare bind:matrix_vec={vec_modified_by_dim} />
 </div>
 
 <!-- TODO: Add rows and cols input if squared matrix not desired -->
