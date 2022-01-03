@@ -15,7 +15,11 @@ export function parseNumber(value: string): number {
 
 export function formatStringNumber(value: string): string {
 	let parsedNumber = parseNumber(value);
+	if (value.toLowerCase().includes('e')) {
+		if (parsedNumber > 10e2 || parsedNumber < 1) {
+			return parsedNumber.toExponential(2);
+		}
+	}
 	if (Number.isInteger(parsedNumber)) return String(parsedNumber);
-	if (value.toLowerCase().includes('e')) return parsedNumber.toExponential(2);
 	return parsedNumber.toFixed(2);
 }
