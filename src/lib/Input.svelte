@@ -18,15 +18,32 @@
 		editing = true;
 		// Validate before dispatching
 		let strInput: string = (e.target as HTMLInputElement).value;
-		let numInput = parseNumber(strInput);
-		if (Number.isNaN(numInput)) return;
-		dispatch('input', numInput);
 		oldValue = strInput;
+		let numInput = parseNumber(strInput);
+		if (Number.isNaN(numInput)) {
+			console.log(`Nan value ${numInput} coming from ${strInput}`);
+			return;
+		}
+		dispatch('input', numInput);
 		// console.log('Dispatched ', value, strInput);
 	}
 
 	function onLeave() {
 		editing = false;
+		formatValue();
+	}
+
+	function formatValue() {
+		//This will format a received value
+		// console.log('Not editing');
+		let numInput = parseNumber(oldValue);
+		if (Number.isNaN(numInput)) {
+			console.log(`Nan value ${numInput} coming from ${oldValue}`);
+			reset();
+		} else {
+			value = formatStringNumber(oldValue);
+		}
+		// console.log('Value modified ', value, ' from ', oldValue);
 	}
 
 	$: if (value) {
@@ -38,16 +55,7 @@
 			// will be "3" so the dot will never appear and cannot write float numbers.
 			value = oldValue;
 		} else {
-			//This will format a received value
-			// console.log('Not editing');
-			let numInput = parseNumber(oldValue);
-			if (Number.isNaN(numInput)) {
-				console.log(`Nan value ${numInput} coming from ${oldValue}`);
-				reset();
-			} else {
-				value = formatStringNumber(oldValue);
-			}
-			// console.log('Value modified ', value, ' from ', oldValue);
+			formatValue();
 		}
 		console.log('Updated value to ', value);
 	}
