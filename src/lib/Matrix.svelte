@@ -3,22 +3,12 @@
 	import Input from './Input.svelte';
 
 	export let matrix_vec: number[] = [];
+	export let rows: number = 0;
+	export let cols: number = 0;
 	export let flow_order: 'column' | 'row' = 'column';
 
-	function getDimMatrix(): number {
-		let sqrtDimVec = Math.sqrt(matrix_vec.length);
-		if (Number.isInteger(sqrtDimVec)) {
-			return sqrtDimVec;
-		}
-		return Math.round(sqrtDimVec);
-	}
-
-	let dim_matrix = getDimMatrix();
-	$: if (matrix_vec) {
-		dim_matrix = getDimMatrix();
-	}
-
-	let old_dim_matrix: number;
+	let old_rows: number;
+	let old_cols: number;
 	let effectHolded = false;
 
 	function handleInput(position: number, newValue: number) {
@@ -30,12 +20,17 @@
 
 <div
 	class="base-matrix matrix-config"
-	style="--dimension: {effectHolded ? old_dim_matrix : dim_matrix};--flow_order:{flow_order}"
+	style="--rows: {effectHolded ? old_rows : rows};
+  --cols: {effectHolded ? old_cols : cols};
+  --flow_order:{flow_order}"
 >
 	{#each matrix_vec as value, pos}
 		<div
 			transition:fade={{ duration: 200 }}
-			on:introend={() => (old_dim_matrix = dim_matrix)}
+			on:introend={() => {
+				old_rows = rows;
+				old_cols = cols;
+			}}
 			on:outrostart={() => (effectHolded = true)}
 			on:outroend={() => (effectHolded = false)}
 			class="input-container"
@@ -51,8 +46,8 @@
 	}
 	.matrix-config {
 		grid-auto-flow: var(--flow_order);
-		grid-template-columns: repeat(var(--dimension), 1fr);
-		grid-template-rows: repeat(var(--dimension), 1fr);
+		grid-template-columns: repeat(var(--cols), 1fr);
+		grid-template-rows: repeat(var(--rows), 1fr);
 	}
 
 	.input-container {
