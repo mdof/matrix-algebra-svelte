@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.13](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.12...v0.0.13) (2022-01-03)
+
+
+### Bug Fixes
+
+* not dispatching, updating input vec ([5175818](https://github.com/esoteloferry/matrix-algebra-svelte/commit/51758186babff3b488ee7b942503e0cf56c63526))
+
 ### [0.0.12](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.11...v0.0.12) (2022-01-01)
 
 ### [0.0.11](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.10...v0.0.11) (2022-01-01)

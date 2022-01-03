@@ -1,6 +1,6 @@
 {
 	"name": "matrix-algebra-svelte",
-	"version": "0.0.12",
+	"version": "0.0.13",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -14,7 +14,8 @@
 		"publish": "npm publish ./package",
 		"prerelease": "npm run format && npm run test-scripts",
 		"release": "standard-version",
-		"postrelease": "git push --follow-tags origin main && npm run publish"
+		"postrelease": "git push --follow-tags origin main",
+		"release-package": "npm run release && npm run publish"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
