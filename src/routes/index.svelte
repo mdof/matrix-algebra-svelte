@@ -4,7 +4,6 @@
 	import MatrixSquare from '$lib/MatrixSquare.svelte';
 	import MatrixSymm from '$lib/MatrixSymm.svelte';
 	let vec = [10, 20, 30, 40];
-	let not_squared = [1, 2, 3, 4, 5, 6];
 	$: console.log(`INDEX ${vec}`);
 	//
 	let dim = 2;
@@ -29,7 +28,7 @@
 	<MatrixSquare matrix_vec={[1, 2, 3, 4]} flow_order="row" />
 	<h2 class="font-bold">Not squared</h2>
 	<Matrix matrix_vec={[1, 2, 3, 4, 5, 6]} rows={2} cols={3} />
-	<h2 class="font-bold">Symmetrix</h2>
+	<h2 class="font-bold">Symmetric</h2>
 	<MatrixSymm matrix_vec={[1, 2, 3, 4]} />
 </div>
 
@@ -45,7 +44,7 @@
 </div>
 
 <!-- TODO: Add rows and cols input if squared matrix not desired -->
-<style style="postcss">
+<style lang="postcss">
 	.block {
 		@apply w-[50%] p-10 border-2 border-gray-100 rounded-xl my-14 mx-auto;
 	}
