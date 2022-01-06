@@ -1,11 +1,16 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
+
 	import { fade } from 'svelte/transition';
 	import Input from './Input.svelte';
+	import type { Flow_Order } from '../lib/scripts/matrix';
+
+	const dispatch = createEventDispatcher<{ input: { position: number; newValue: number } }>();
 
 	export let matrix_vec: number[] = [];
 	export let rows: number = 0;
 	export let cols: number = 0;
-	export let flow_order: 'column' | 'row' = 'column';
+	export let flow_order: Flow_Order = 'column';
 	export let disabled: number[] = [];
 
 	let old_rows: number;
@@ -14,6 +19,7 @@
 
 	function handleInput(position: number, newValue: number) {
 		matrix_vec[position] = newValue;
+		dispatch('input', { position, newValue });
 	}
 
 	$: console.log(`Matrix changed to ${matrix_vec}`);
@@ -25,7 +31,7 @@
   --cols: {effectHolded ? old_cols : cols};
   --flow_order:{flow_order}"
 >
-	{#each matrix_vec as value, pos}
+	{#each matrix_vec as value, pos (pos)}
 		<div
 			transition:fade={{ duration: 200 }}
 			on:introend={() => {
