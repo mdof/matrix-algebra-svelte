@@ -2,10 +2,10 @@
 	import { createEventDispatcher } from 'svelte';
 	import { parseNumber, formatStringNumber } from './scripts/parseStringToNumber';
 	const defaultValue = 0;
-	const dispatch = createEventDispatcher();
+	const dispatch = createEventDispatcher<{ input: number }>();
 
 	export let label: string = '';
-	export let value: number | string = defaultValue;
+	export let value: string | number = defaultValue;
 	export let disabled: boolean = false;
 
 	let oldValue: string = value.toString();
@@ -33,18 +33,18 @@
 
 	function onLeave() {
 		editing = false;
-		formatValue();
+		formatValue(oldValue);
 	}
 
-	function formatValue() {
+	function formatValue(val: string) {
 		//This will format a received value
 		// console.log('Not editing');
-		let numInput = parseNumber(oldValue);
+		let numInput = parseNumber(val);
 		if (Number.isNaN(numInput)) {
 			console.log(`Nan value ${numInput} coming from ${oldValue}`);
 			reset();
 		} else {
-			value = formatStringNumber(oldValue);
+			value = formatStringNumber(val);
 		}
 		// console.log('Value modified ', value, ' from ', oldValue);
 	}
@@ -58,7 +58,8 @@
 			// will be "3" so the dot will never appear and cannot write float numbers.
 			value = oldValue;
 		} else {
-			formatValue();
+			/* console.log('Received value when not editing ', value, oldValue); */
+			formatValue(value.toString());
 		}
 		console.log('Updated value to ', value);
 	}

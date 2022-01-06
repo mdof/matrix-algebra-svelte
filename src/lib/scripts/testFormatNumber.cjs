@@ -17,6 +17,9 @@ exports.testData = {
 		{ input: '1.234e-2', output: '1.23e-2' },
 		{ input: '1.234e0', output: '1.23' },
 		{ input: '12.34e-1', output: '1.23' },
-		{ input: '12.34e-2', output: '1.23e-1' }
+		{ input: '12.34e-2', output: '1.23e-1' },
+		// Above 1000 then scientific
+		{ input: '1200', output: '1.20e+3' },
+		{ input: '1200.4', output: '1.20e+3' }
 	]
 };
