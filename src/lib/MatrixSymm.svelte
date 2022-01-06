@@ -4,6 +4,7 @@
 	import type { Flow_Order } from './scripts/matrix';
 
 	export let matrix_vec: number[] = [];
+	// TODO: add check of symmetry of matrix before rendering
 	export let flow_order: Flow_Order = 'column';
 
 	// FIXME: type not warned by lsp
