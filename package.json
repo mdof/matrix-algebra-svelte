@@ -12,8 +12,8 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
 		"test-scripts": "jest",
 		"prepublish": "npm run package",
-		"publish": "npm publish ./package",
-		"prerelease": "npm run format && npm run test-scripts",
+		"publish": "npm publish ./package --access public",
+		"prerelease": "npm run format && npm run test-scripts && npm run check",
 		"release": "standard-version",
 		"postrelease": "git push --follow-tags origin main",
 		"release-package": "npm run release && npm run publish",
@@ -46,5 +46,12 @@
 		"url": "https://github.com/mdof/matrix-algebra-svelte.git"
 	},
 	"homepage": "https://github.com/mdof/matrix-algebra-svelte.git",
-	"license": "MIT"
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mdof/matrix-algebra-svelte/issues"
+	},
+	"keywords": [
+		"matrix"
+	],
+	"author": "esoteloferry"
 }
