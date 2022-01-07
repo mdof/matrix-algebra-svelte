@@ -1,5 +1,5 @@
 {
-	"name": "@dynamics/matrix-algebra-svelte",
+	"name": "@mdof/matrix-algebra-svelte",
 	"description": "Svelte component for matrix algebra",
 	"version": "0.0.16",
 	"scripts": {
@@ -43,8 +43,8 @@
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/esoteloferry/matrix-algebra-svelte.git"
+		"url": "https://github.com/mdof/matrix-algebra-svelte.git"
 	},
-	"homepage": "https://github.com/esoteloferry/matrix-algebra-svelte.git",
+	"homepage": "https://github.com/mdof/matrix-algebra-svelte.git",
 	"license": "MIT"
 }
