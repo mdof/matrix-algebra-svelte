@@ -77,13 +77,15 @@
 
 <style lang="postcss">
 	label {
-		@apply w-full select-none flex items-center border border-transparent rounded-sm  hover:border-gray-100  focus-within:ring-indigo-700 focus-within:outline-none focus-within:ring-2 focus-within:ring-opacity-70;
+		@apply w-full m-0 select-none flex items-center border border-solid border-transparent rounded-sm  
+    ring-0 hover:border-gray-100  focus-within:ring-indigo-700 
+    focus-within:outline-none focus-within:ring-2 focus-within:ring-opacity-70;
 	}
 	span {
 		@apply block flex-shrink-0 h-7 w-auto px-4  text-neutral-700  text-xs leading-7 text-center;
 	}
 	input {
-		@apply w-full m-0 h-7 bg-transparent outline-none  text-xs leading-7 text-center;
+		@apply w-full m-0 h-7 border-0 bg-transparent outline-none  text-xs leading-7 text-center;
 	}
 
 	.disabled {
