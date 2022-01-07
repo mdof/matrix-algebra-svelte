@@ -6,6 +6,8 @@ export function isSquared(vec: number[]): boolean {
 	return true;
 }
 
+//TODO: isSymmetric
+
 export function getDimMatrix(vec: number[]): number | undefined {
 	let sqrtDimVec = Math.sqrt(vec.length);
 	if (!Number.isInteger(sqrtDimVec)) {
