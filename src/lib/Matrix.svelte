@@ -7,9 +7,9 @@
 
 	const dispatch = createEventDispatcher<{ input: { position: number; newValue: number } }>();
 
-	export let matrix_vec: number[] = [];
-	export let rows: number = 0;
-	export let cols: number = 0;
+	export let matrix_vec: number[];
+	export let rows: number;
+	export let cols: number;
 	export let flow_order: Flow_Order = 'column';
 	export let disabled: number[] = [];
 

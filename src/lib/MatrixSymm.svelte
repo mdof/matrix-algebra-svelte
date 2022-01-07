@@ -3,7 +3,7 @@
 	import { getDisabled, getDimMatrix, getSymmetricPosition, isSquared } from './scripts/matrix';
 	import type { Flow_Order } from './scripts/matrix';
 
-	export let matrix_vec: number[] = [];
+	export let matrix_vec: number[];
 	export let flow_order: Flow_Order = 'column';
 
 	let dim_matrix: number = 0;
