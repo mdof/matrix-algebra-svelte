@@ -2,13 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.18](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.17...v0.0.18) (2022-01-07)
+### [0.0.19](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.18...v0.0.19) (2022-01-07)
 
 
 ### Bug Fixes
 
-* Params matrix_vec, rows, cols should not be undefined ([5ab6f2a](https://github.com/mdof/matrix-algebra-svelte/commit/5ab6f2addfeb35b4af937bb253aa30f6316796d7))
-* styling was not working ([717431b](https://github.com/mdof/matrix-algebra-svelte/commit/717431b443796ea07b41dc428b2c7a2ae222dbab))
+* update exported from index.ts ([51bfa5e](https://github.com/mdof/matrix-algebra-svelte/commit/51bfa5e44a2eb81f03767d8138edf29a2758447d))
+
+### [0.0.18](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.17...v0.0.18) (2022-01-07)
+
+### Bug Fixes
+
+- Params matrix_vec, rows, cols should not be undefined ([5ab6f2a](https://github.com/mdof/matrix-algebra-svelte/commit/5ab6f2addfeb35b4af937bb253aa30f6316796d7))
+- styling was not working ([717431b](https://github.com/mdof/matrix-algebra-svelte/commit/717431b443796ea07b41dc428b2c7a2ae222dbab))
 
 ### [0.0.17](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.16...v0.0.17) (2022-01-07)
 
