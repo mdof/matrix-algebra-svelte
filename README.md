@@ -39,9 +39,9 @@ $ npm i matrix-algebra-svelte
 <h3>Contributing</h3>
 Keep it simple. Keep it minimal.
 
-<h3>Authors or Acknowledgments</h3>
+<h3>Authors </h3>
 <ul>
-  <li>Efrain Sotelo</li>
+  <li>[@esoteloferry](https://github.com/esoteloferry)</li>
 </ul>
 
 <h3>License</h3>
