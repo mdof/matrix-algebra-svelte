@@ -1,5 +1,6 @@
 {
-	"name": "matrix-algebra-svelte",
+	"name": "@dynamics/matrix-algebra-svelte",
+	"description": "Svelte component for matrix algebra",
 	"version": "0.0.15",
 	"scripts": {
 		"dev": "svelte-kit dev",
