@@ -1,18 +1,24 @@
 <script lang="ts">
 	import MatrixSquare from './MatrixSquare.svelte';
-	import { getDisabled, getDimMatrix, getSymmetricPosition } from './scripts/matrix';
+	import { getDisabled, getDimMatrix, getSymmetricPosition, isSquared } from './scripts/matrix';
 	import type { Flow_Order } from './scripts/matrix';
 
 	export let matrix_vec: number[] = [];
-	// TODO: add check of symmetry of matrix before rendering
 	export let flow_order: Flow_Order = 'column';
 
-	// FIXME: type not warned by lsp
-	let dim_matrix: number = getDimMatrix(matrix_vec);
+	let dim_matrix: number = 0;
+	updateDimMatrix();
+
 	let disabled: number[];
 	$: if (matrix_vec) {
-		dim_matrix = getDimMatrix(matrix_vec);
+		updateDimMatrix();
 		disabled = getDisabled(dim_matrix);
+	}
+
+	// TODO: duplicated in MatrixSquare
+	function updateDimMatrix() {
+		let dim: number | undefined = getDimMatrix(matrix_vec);
+		if (typeof dim !== 'undefined') dim_matrix = dim;
 	}
 
 	function handleInput(data: { position: number; newValue: number }) {

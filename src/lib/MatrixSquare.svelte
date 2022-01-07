@@ -6,10 +6,15 @@
 	export let flow_order: Flow_Order = 'column';
 	export let disabled: number[] = [];
 
-	// FIXME: type not warned by lsp
-	let dim_matrix: number | undefined = getDimMatrix(matrix_vec);
+	let dim_matrix: number = 0;
+	updateDimMatrix();
 	$: if (matrix_vec) {
-		dim_matrix = getDimMatrix(matrix_vec);
+		updateDimMatrix();
+	}
+	// TODO: duplicated in MatrixSymm
+	function updateDimMatrix() {
+		let dim: number | undefined = getDimMatrix(matrix_vec);
+		if (typeof dim !== 'undefined') dim_matrix = dim;
 	}
 </script>
 
