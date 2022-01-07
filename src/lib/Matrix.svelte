@@ -62,6 +62,6 @@
 	}
 
 	.input-container {
-		@apply w-full flex content-center justify-center  rounded border-2 border-gray-100;
+		@apply w-full flex content-center justify-center  rounded border-2 border-gray-100 border-solid;
 	}
 </style>
