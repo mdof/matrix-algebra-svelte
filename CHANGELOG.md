@@ -2,14 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.16](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.15...v0.0.16) (2022-01-07)
+### [0.0.17](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.16...v0.0.17) (2022-01-07)
 
+
+### Features
+
+* update to mdof organization ([e1a9409](https://github.com/mdof/matrix-algebra-svelte/commit/e1a94093503c7d73b3eb8195912187f16986d1e0))
+
+### [0.0.16](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.15...v0.0.16) (2022-01-07)
 
 ### Bug Fixes
 
-* column instead of col ([c2396f3](https://github.com/esoteloferry/matrix-algebra-svelte/commit/c2396f39a98053041f06fad3ca14cd063a565099))
-* parseNumber ([2b1cccb](https://github.com/esoteloferry/matrix-algebra-svelte/commit/2b1cccbbefbadf15493364527428c5bc6985bb65))
-* strict true to type check undefined too ([1bd0243](https://github.com/esoteloferry/matrix-algebra-svelte/commit/1bd0243d27d3cd51331ad7d84dfb9d05d252f6ae))
+- column instead of col ([c2396f3](https://github.com/esoteloferry/matrix-algebra-svelte/commit/c2396f39a98053041f06fad3ca14cd063a565099))
+- parseNumber ([2b1cccb](https://github.com/esoteloferry/matrix-algebra-svelte/commit/2b1cccbbefbadf15493364527428c5bc6985bb65))
+- strict true to type check undefined too ([1bd0243](https://github.com/esoteloferry/matrix-algebra-svelte/commit/1bd0243d27d3cd51331ad7d84dfb9d05d252f6ae))
 
 ### [0.0.15](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.14...v0.0.15) (2022-01-06)
 

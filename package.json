@@ -1,7 +1,7 @@
 {
 	"name": "@mdof/matrix-algebra-svelte",
 	"description": "Svelte component for matrix algebra",
-	"version": "0.0.16",
+	"version": "0.0.17",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
