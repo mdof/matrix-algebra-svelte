@@ -2,12 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.15](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.14...v0.0.15) (2022-01-06)
+### [0.0.16](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.15...v0.0.16) (2022-01-07)
 
 
 ### Bug Fixes
 
-* Input not showing value on mount ([80c7935](https://github.com/esoteloferry/matrix-algebra-svelte/commit/80c79355d4433da7d4d834ed66db7ed4bd2e11ff))
+* column instead of col ([c2396f3](https://github.com/esoteloferry/matrix-algebra-svelte/commit/c2396f39a98053041f06fad3ca14cd063a565099))
+* parseNumber ([2b1cccb](https://github.com/esoteloferry/matrix-algebra-svelte/commit/2b1cccbbefbadf15493364527428c5bc6985bb65))
+* strict true to type check undefined too ([1bd0243](https://github.com/esoteloferry/matrix-algebra-svelte/commit/1bd0243d27d3cd51331ad7d84dfb9d05d252f6ae))
+
+### [0.0.15](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.14...v0.0.15) (2022-01-06)
+
+### Bug Fixes
+
+- Input not showing value on mount ([80c7935](https://github.com/esoteloferry/matrix-algebra-svelte/commit/80c79355d4433da7d4d834ed66db7ed4bd2e11ff))
 
 ### [0.0.14](https://github.com/esoteloferry/matrix-algebra-svelte/compare/v0.0.13...v0.0.14) (2022-01-03)
 
