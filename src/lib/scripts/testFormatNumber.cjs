@@ -1,9 +1,6 @@
 exports.testData = {
 	formatString: [
 		//Standard format
-		//Zero
-		{ input: '0', output: '0' },
-		{ input: '0.0', output: '0' },
 		//Integer
 		{ input: '2.0', output: '2' },
 		{ input: '2', output: '2' },
@@ -24,5 +21,10 @@ exports.testData = {
 		// Above 1000 then scientific
 		{ input: '1200', output: '1.20e+3' },
 		{ input: '1200.4', output: '1.20e+3' }
+	],
+	formatStringZero: [
+		//Zero
+		{ input: '0', output: '0' },
+		{ input: '0.0', output: '0' }
 	]
 };

@@ -26,6 +26,13 @@ describe('formatStringNumber', () => {
 	test('format input', () => {
 		for (let testFormat of testData['formatString']) {
 			expect(formatStringNumber(testFormat['input'])).toBe(testFormat['output']);
+			//Negative value
+			expect('-' + formatStringNumber(testFormat['input'])).toBe('-' + testFormat['output']);
+		}
+	});
+	test('format input - zero', () => {
+		for (let testFormat of testData['formatStringZero']) {
+			expect(formatStringNumber(testFormat['input'])).toBe(testFormat['output']);
 		}
 	});
 });
