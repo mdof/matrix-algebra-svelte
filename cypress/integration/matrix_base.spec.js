@@ -2,11 +2,8 @@
 import { testData } from '../../src/lib/scripts/testFormatNumber.cjs';
 
 describe('Input number', () => {
-	beforeEach(() => {
-		cy.visit('/');
-	});
-
 	it('format on leave', () => {
+		cy.visit('/');
 		cy.get('[data-test-id="reactive"]').within(() => {
 			cy.get('input').as('inputs');
 
