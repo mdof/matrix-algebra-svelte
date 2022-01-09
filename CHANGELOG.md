@@ -2,12 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.19](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.18...v0.0.19) (2022-01-07)
+### [0.0.20](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.19...v0.0.20) (2022-01-09)
 
+
+### Features
+
+* add brackets to matrix ([8da2c35](https://github.com/mdof/matrix-algebra-svelte/commit/8da2c35e2a2226dc95259b822181739d6ebeac6d))
+
+### [0.0.19](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.18...v0.0.19) (2022-01-07)
 
 ### Bug Fixes
 
-* update exported from index.ts ([51bfa5e](https://github.com/mdof/matrix-algebra-svelte/commit/51bfa5e44a2eb81f03767d8138edf29a2758447d))
+- update exported from index.ts ([51bfa5e](https://github.com/mdof/matrix-algebra-svelte/commit/51bfa5e44a2eb81f03767d8138edf29a2758447d))
 
 ### [0.0.18](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.17...v0.0.18) (2022-01-07)
 
