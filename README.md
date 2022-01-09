@@ -40,7 +40,9 @@ $ npm i matrix-algebra-svelte
 Keep it simple. Keep it minimal.
 
 <h3>Authors </h3>
+
 [@esoteloferry](https://github.com/esoteloferry)
+
 </ul>
 
 <h3>License</h3>
