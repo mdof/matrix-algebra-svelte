@@ -13,7 +13,7 @@
 		"test-scripts": "jest",
 		"prepublish": "npm run package",
 		"publish": "npm publish ./package --access public",
-		"prerelease": "npm run format && npm run test-scripts && npm run check",
+		"prerelease": "npm run format && npm run cypress:run && npm run test-scripts && npm run check",
 		"release": "standard-version",
 		"postrelease": "git push --follow-tags origin main",
 		"release-package": "npm run release && npm run publish",
