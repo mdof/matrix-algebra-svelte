@@ -2,12 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.21](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.20...v0.0.21) (2022-01-09)
+### [0.0.22](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.21...v0.0.22) (2022-01-09)
 
 
 ### Bug Fixes
 
-* format when input is zero ([3b1b848](https://github.com/mdof/matrix-algebra-svelte/commit/3b1b8486b6889e4dd51838bbeb2a0b02daee54ad))
+* cy.visit should be in it function ([fc16d38](https://github.com/mdof/matrix-algebra-svelte/commit/fc16d383faab40c348be76299e8ec8578104d68b))
+* cypress run fails but cypress open works ([3c1056b](https://github.com/mdof/matrix-algebra-svelte/commit/3c1056b74b51c4d3df4bfd3482c86036ce55faca))
+* format negative values ([63a2901](https://github.com/mdof/matrix-algebra-svelte/commit/63a2901e3f0cec175f14dd4104dfdb5c2405ad22))
+
+### [0.0.21](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.20...v0.0.21) (2022-01-09)
+
+### Bug Fixes
+
+- format when input is zero ([3b1b848](https://github.com/mdof/matrix-algebra-svelte/commit/3b1b8486b6889e4dd51838bbeb2a0b02daee54ad))
 
 ### [0.0.20](https://github.com/mdof/matrix-algebra-svelte/compare/v0.0.19...v0.0.20) (2022-01-09)
 
