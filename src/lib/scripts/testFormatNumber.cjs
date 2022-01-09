@@ -1,6 +1,9 @@
 exports.testData = {
 	formatString: [
 		//Standard format
+		//Zero
+		{ input: '0', output: '0' },
+		{ input: '0.0', output: '0' },
 		//Integer
 		{ input: '2.0', output: '2' },
 		{ input: '2', output: '2' },

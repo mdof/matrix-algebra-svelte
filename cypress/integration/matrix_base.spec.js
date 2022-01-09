@@ -1,12 +1,12 @@
 /// <reference types="cypress" />
 import { testData } from '../../src/lib/scripts/testFormatNumber.cjs';
 
-describe('Matrix base', () => {
+describe('Input number', () => {
 	beforeEach(() => {
 		cy.visit('/');
 	});
 
-	it('can render matrix', () => {
+	it('format on leave', () => {
 		cy.get('[data-test-id="reactive"]').within(() => {
 			cy.get('input').as('inputs');
 
