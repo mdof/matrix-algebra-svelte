@@ -1,7 +1,7 @@
 {
 	"name": "@mdof/matrix-algebra-svelte",
 	"description": "Svelte component for matrix algebra",
-	"version": "0.0.20",
+	"version": "0.0.21",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -13,12 +13,14 @@
 		"test-scripts": "jest",
 		"prepublish": "npm run package",
 		"publish": "npm publish ./package --access public",
-		"prerelease": "npm run format && npm run cypress:run && npm run test-scripts && npm run check",
+		"prerelease": "npm run format && npm run e2e && npm run test-scripts && npm run check",
 		"release": "standard-version",
 		"postrelease": "git push --follow-tags origin main",
 		"release-package": "npm run release && npm run publish",
 		"cypress:open": "cypress open",
-		"cypress:run": "cypress run"
+		"cypress:run": "cypress run --config baseUrl=http://localhost:9000/",
+		"start": "svelte-kit dev --port 9000",
+		"e2e": "start-test 9000 'npm run cypress:run'"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
@@ -31,6 +33,7 @@
 		"prettier": "^2.4.1",
 		"prettier-plugin-svelte": "^2.4.0",
 		"standard-version": "^9.3.2",
+		"start-server-and-test": "^1.14.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
 		"svelte-preprocess": "^4.10.1",
