@@ -18,9 +18,9 @@
 		"postrelease": "git push --follow-tags origin main",
 		"release-package": "npm run release && npm run publish",
 		"cypress:open": "cypress open",
-		"cypress:run": "cypress run --config baseUrl=http://localhost:9000/",
+		"cypress:run": "cypress run --config baseUrl=http://localhost:9000/ --headed",
 		"start": "svelte-kit dev --port 9000",
-		"e2e": "start-test 9000 'npm run cypress:run'"
+		"e2e": "start-test start 9000 cypress:run"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",

@@ -2,8 +2,10 @@
 import { testData } from '../../src/lib/scripts/testFormatNumber.cjs';
 
 describe('Input number', () => {
-	it('format on leave', () => {
+	beforeEach(() => {
 		cy.visit('/');
+	});
+	it('format on leave', () => {
 		cy.get('[data-test-id="reactive"]').within(() => {
 			cy.get('input').as('inputs');
 
@@ -13,12 +15,14 @@ describe('Input number', () => {
 			cy.get('@input').clear().should('have.value', '');
 			for (let testFormat of testData['formatString']) {
 				cy.get('@input')
+					.focus()
 					.type(testFormat['input'])
 					.blur()
 					.should('have.value', testFormat['output'])
 					.clear();
 				//Negative value
 				cy.get('@input')
+					.focus()
 					.type('-' + testFormat['input'])
 					.blur()
 					.should('have.value', '-' + testFormat['output'])
@@ -27,7 +31,6 @@ describe('Input number', () => {
 		});
 	});
 	it('format on leave - zero', () => {
-		cy.visit('/');
 		cy.get('[data-test-id="reactive"]').within(() => {
 			cy.get('input').as('inputs');
 
@@ -37,6 +40,7 @@ describe('Input number', () => {
 			cy.get('@input').clear().should('have.value', '');
 			for (let testFormat of testData['formatStringZero']) {
 				cy.get('@input')
+					.focus()
 					.type(testFormat['input'])
 					.blur()
 					.should('have.value', testFormat['output'])
